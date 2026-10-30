@@ -547,6 +547,20 @@ def metric(value: float, unit: str = "", precision: int = 3) -> str:
         '220 μF'
         >>> metric(1e-14, precision=4)
         '10.00 f'
+        >>> metric(1500, "V", precision=5)
+        '1.5000 kV'
+        >>> metric(0, "V")
+        '0.00 V'
+        >>> metric(-0.0042, "A")
+        '-4.20 mA'
+        >>> metric(9999, "Hz")
+        '10.0 kHz'
+        >>> metric(999.9, "m")
+        '1.00 km'
+        >>> metric(45, "°")
+        '45.0°'
+        >>> metric(float("nan"))
+        'NaN'
 
         ```
 
@@ -558,6 +572,8 @@ def metric(value: float, unit: str = "", precision: int = 3) -> str:
     ```pycon
     >>> metric(1e40)
     '1.00 x 10⁴⁰'
+    >>> metric(1e-31)
+    '1.00 x 10⁻³¹'
 
     ```
 
