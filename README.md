@@ -199,6 +199,22 @@ If seconds are too large, set `minimum_unit` to milliseconds or microseconds:
 '1 x 10⁰'
 ```
 
+### List humanization
+
+```pycon
+>>> import humanize
+>>> humanize.natural_list(["one", "two", "three"])
+'one, two and three'
+>>> humanize.natural_list(["one", "two"])
+'one and two'
+>>> humanize.natural_list(["one"])
+'one'
+>>> humanize.natural_list([1, 2, 3])
+'1, 2 and 3'
+>>> humanize.natural_list([])
+''
+```
+
 ## Localization
 
 How to change locale at runtime:
