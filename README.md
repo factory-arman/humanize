@@ -201,7 +201,8 @@ If seconds are too large, set `minimum_unit` to milliseconds or microseconds:
 
 ### List humanization
 
-`natural_list` accepts any iterable and converts each item to a string:
+`natural_list` accepts any iterable and converts each item to a string. It always joins
+the last two items with the English "and", without an Oxford comma:
 
 ```pycon
 >>> import humanize
