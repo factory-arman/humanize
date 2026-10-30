@@ -547,6 +547,18 @@ def metric(value: float, unit: str = "", precision: int = 3) -> str:
         '220 μF'
         >>> metric(1e-14, precision=4)
         '10.00 f'
+        >>> metric(-0.0042, "A")
+        '-4.20 mA'
+        >>> metric(0, "V")
+        '0.00 V'
+        >>> metric(9999, "V")
+        '10.0 kV'
+        >>> metric(1234567, "B", precision=5)
+        '1.2346 MB'
+        >>> metric(1500, "V", precision=1)
+        '2 kV'
+        >>> metric(45, "°")
+        '45.0°'
 
         ```
 
